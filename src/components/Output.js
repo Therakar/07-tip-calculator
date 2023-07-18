@@ -1,7 +1,9 @@
-export default function Output() {
+export default function Output({ bill, tip }) {
   return (
     <div>
-      <h2>TOTAL</h2>
+      <h3>
+        You Pay ${bill + tip} (${bill} + ${tip} tip)
+      </h3>
     </div>
   );
 }

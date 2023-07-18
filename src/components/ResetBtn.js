@@ -1,7 +1,7 @@
-export default function ResetBtn() {
+export default function ResetBtn({ onReset }) {
   return (
     <div>
-      <button>Reset</button>
+      <button onClick={onReset}>Reset</button>
     </div>
   );
 }

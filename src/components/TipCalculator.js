@@ -10,7 +10,9 @@ export default function TipCalculator() {
   const [userPercentage, setUserPercentage] = useState(0);
   const [friendPercentage, setFriendPercentage] = useState(0);
 
-  const tip = bill * ((userPercentage + friendPercentage) / 2 / 100);
+  const tip = (bill * ((userPercentage + friendPercentage) / 2 / 100)).toFixed(
+    2
+  );
 
   //handler functions
   function handleReset() {
@@ -31,8 +33,13 @@ export default function TipCalculator() {
       >
         How did your friend like the service?
       </TipPercentage>
-      <Output bill={bill} tip={tip} />
-      <ResetBtn onReset={handleReset} />
+
+      {bill > 0 && (
+        <>
+          <Output bill={bill} tip={tip} />
+          <ResetBtn onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
